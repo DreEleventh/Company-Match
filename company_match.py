@@ -50,13 +50,13 @@ list_frame.grid()
 # Creating the label and listbox for the employees 
 person_label = tk.Label(master=list_frame, text="Person")
 person_label.grid(row=1, column=3, padx=20, pady=10)
-person_listbox = tk.Listbox(master=list_frame, relief=tk.SUNKEN, borderwidth=5)
+person_listbox = tk.Listbox(master=list_frame, relief=tk.SUNKEN, borderwidth=5, exportselection=0)
 person_listbox.grid(row=2, column=3, padx=20, pady=10)
 
 # Creating the label and listbox for the employers 
 workplace_label = tk.Label(master=list_frame, text="Workplace")
 workplace_label.grid(row=1, column=4, padx=20, pady=10)
-workplace_listbox = tk.Listbox(master=list_frame, relief=tk.SUNKEN, borderwidth=5)
+workplace_listbox = tk.Listbox(master=list_frame, relief=tk.SUNKEN, borderwidth=5, exportselection=0)
 workplace_listbox.grid(row=2, column=4, padx=20, pady=10)
 
 # Populate both listboxes with data 
