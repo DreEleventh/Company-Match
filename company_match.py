@@ -16,3 +16,16 @@ employee =["John Anderson","Kim Anderson", "Rick Grant", "Andrew Peterson",
 employer =["PLB Planet", "JSN Bank", "Kingston Industrial", "ABN Enterprises", 
             "Amazon Jamaica", "Daily Radio", "Ministry of Health", "Whole Foods"]
 
+# A sub dictionary to store the selected items of each listbox 
+sub_dict={}
+
+window = tk.Tk()
+
+# defining the main window and its elements 
+window.title("Company Match")
+window.minsize(220, 350)
+window.resizable(0, 0)
+
+# Creating the frame that'll hold the listboxs 
+list_frame = tk.Frame(master=window)
+list_frame.grid()
