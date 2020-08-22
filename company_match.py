@@ -18,6 +18,7 @@ employer =["PLB Planet", "JSN Bank", "Kingston Industrial", "ABN Enterprises",
 
 # A sub dictionary to store the selected items of each listbox 
 sub_dict={}
+
 def check_match(even=None): 
     boxItem1 = workplace_listbox.get(workplace_listbox.curselection())
     boxItem2 = person_listbox.get(person_listbox.curselection())
