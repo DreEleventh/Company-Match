@@ -72,10 +72,12 @@ for items in employer:
 button_frame = tk.Frame(master=window)
 button_frame.grid()
 
+# Defining the button that'll check if the data selected in the listbox match
 check_btn = tk.Button(master=button_frame, text="Check Match", command=check_match)
 check_btn.grid(row=3, column=2, pady=10, sticky="nsew")
 check_btn.bind("<Button-1>", check_match)
 
+# Defining the entry and answer entry labels 
 entry_lbl = tk.Label(master=button_frame, text="Answer:")
 entry_lbl.grid(row=4, column=1, stick="e")
 
