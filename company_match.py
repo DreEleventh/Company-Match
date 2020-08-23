@@ -8,13 +8,15 @@ import tkinter as tk
 company = {"JSN Bank":"Kim Anderson", "Kingston Industrial":"Andrew Peterson", 
             "Amazon Jamaica":"Stephen Jones", "Ministry of Health":"Roy Simpson", 
             "Whole Foods":"Keisha Tolcut", "Daily Radio":"John Anderson", 
-            "ABN Enterprises":"Yvonne Bryan", "PLB Planet":"Rick Grant"}
+            "ABN Enterprises":"Yvonne Bryan", "PLB Planet":"Rick Grant", 
+            "JM Tech":"Dave Peters", "Sams Restaurant":"Kelly Zan"}
 
-employee =["John Anderson","Kim Anderson", "Rick Grant", "Andrew Peterson", 
-            "Yvonne Bryan", "Stephen Jones", "Roy Simpson", "Keisha Tolcut"]
+employee =["John Anderson","Kim Anderson", "Rick Grant", "Dave Peters", "Andrew Peterson", 
+            "Yvonne Bryan", "Kelly Zan", "Stephen Jones", "Roy Simpson", "Keisha Tolcut"]
 
-employer =["PLB Planet", "JSN Bank", "Kingston Industrial", "ABN Enterprises", 
-            "Amazon Jamaica", "Daily Radio", "Ministry of Health", "Whole Foods"]
+employer =["PLB Planet", "JM Tech", "JSN Bank", "Sams Restaurant", "Kingston Industrial", 
+            "ABN Enterprises", "Amazon Jamaica", "Daily Radio", "Ministry of Health", 
+            "Whole Foods"]
 
 # A sub dictionary to store the selected items of each listbox 
 sub_dict={}
@@ -70,7 +72,7 @@ for items in employer:
 button_frame = tk.Frame(master=window)
 button_frame.grid()
 
-check_btn = tk.Button(master=button_frame, text="Determine if Match is Correct.", command=check_match)
+check_btn = tk.Button(master=button_frame, text="Check Match", command=check_match)
 check_btn.grid(row=3, column=2, pady=10, sticky="nsew")
 check_btn.bind("<Button-1>", check_match)
 
