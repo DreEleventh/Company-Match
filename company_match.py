@@ -1,22 +1,27 @@
 # This GUI program is built using tkinter and python users are 
-# asked to select a person then a company and varify is they match 
+# asked to select a person then a company and verify is they match 
 # they only match if the person works for that company 
 
 import tkinter as tk 
 
-# Creating a set of list and dictionaries to hold the employees and their employors
+# Creating a set of list and dictionaries to hold the employees and their employers
 company = {"JSN Bank":"Kim Anderson", "Kingston Industrial":"Andrew Peterson", 
             "Amazon Jamaica":"Stephen Jones", "Ministry of Health":"Roy Simpson", 
             "Whole Foods":"Keisha Tolcut", "Daily Radio":"John Anderson", 
             "ABN Enterprises":"Yvonne Bryan", "PLB Planet":"Rick Grant", 
             "JM Tech":"Dave Peters", "Sams Restaurant":"Kelly Zan"}
 
-employee =["John Anderson","Kim Anderson", "Rick Grant", "Dave Peters", "Andrew Peterson", 
-            "Yvonne Bryan", "Kelly Zan", "Stephen Jones", "Roy Simpson", "Keisha Tolcut"]
 
-employer =["PLB Planet", "JM Tech", "JSN Bank", "Sams Restaurant", "Kingston Industrial", 
-            "ABN Enterprises", "Amazon Jamaica", "Daily Radio", "Ministry of Health", 
-            "Whole Foods"]
+# By using set comprehensions to populate the employee 
+# and company sets we only have to update the company dictionary 
+employee_names = {emp for emp in company.values()}
+# employee ={"John Anderson","Kim Anderson", "Rick Grant", "Dave Peters", "Andrew Peterson", 
+#             "Yvonne Bryan", "Kelly Zan", "Stephen Jones", "Roy Simpson", "Keisha Tolcut"}
+
+company_names = {comp for comp in company.keys()}
+# employer ={"PLB Planet", "JM Tech", "JSN Bank", "Sams Restaurant", "Kingston Industrial", 
+#             "ABN Enterprises", "Amazon Jamaica", "Daily Radio", "Ministry of Health", 
+#             "Whole Foods"}
 
 # A sub dictionary to store the selected items of each listbox 
 sub_dict={}
@@ -33,7 +38,7 @@ def check_match(even=None):
     # Checks if result is true and prints the appropriate response 
     if result == True: 
         answer_entry["text"] = "Correct"
-    elif result == False: 
+    else: 
         answer_entry["text"] = "Incorrect"
     # clears the sub dictionary of any previous employee information
     sub_dict.clear()
@@ -62,10 +67,10 @@ workplace_listbox = tk.Listbox(master=list_frame, relief=tk.SUNKEN, borderwidth=
 workplace_listbox.grid(row=2, column=4, padx=20, pady=10)
 
 # Populate both listboxes with data 
-for items in employee: 
+for items in employee_names: 
     person_listbox.insert(tk.END, items)
 
-for items in employer:
+for items in company_names:
     workplace_listbox.insert(tk.END, items )
 
 # Defining the frame that'll hold the buttons and answer label
